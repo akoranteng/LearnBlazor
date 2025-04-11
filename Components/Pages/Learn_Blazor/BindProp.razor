@@ -22,6 +22,7 @@
         <h3 class="text-primary">Product Summary</h3>
         <hr />
         Name : @Product.Name <br />
+        PurchaseDate: @Product.ShipDate<br />
         IsActive : @Product.IsActive <br />
         Price: @Product.Price <br />
         Current status : @(Product.IsActive ? "Active" : "InActive") <br />
@@ -41,6 +42,7 @@
                 <tr>
                     <td>Product Name</td>
                     <td>Price</td>
+                    <td>Ship Date</td>
                     <td>Is Active </td>
                 </tr>
             </thead>
@@ -49,6 +51,7 @@
                 {
                     <tr>
                         <td><input type="text" @bind="prod.Name" @bind:event="oninput" /></td>
+                        <td><input type="text" @bind="prod.ShipDate" @bind:event="oninput" /></td>
                         <td><input type="text" @bind="prod.Price" @bind:event="oninput" /></td>
                         <td><input type="checkbox" @bind="prod.IsActive" /></td>
                     </tr>
@@ -75,6 +78,7 @@
     {
         Id=1,
         Name="Product 1",
+        ShipDate  = new DateTime(2025, 4, 11), // Corrected DateTime initialization(), // Corrected DateTime initialization
         IsActive=true,
         Price=5,
         ProductProperties= new List<Product_Prop>()
@@ -93,6 +97,7 @@
             {
                 Id = 1,
                 Name = "Midnight Blaze",
+                ShipDate = new DateTime(2025, 4, 11), // Corrected DateTime initialization
                 IsActive = false,
                 Price = 5.99,
                 ProductProperties = new List<Product_Prop>()
@@ -107,6 +112,7 @@
             {
                 Id = 2,
                 Name = "Blossom Lily",
+                ShipDate = new DateTime(2025, 4, 14), // Corrected DateTime initialization
                 IsActive = true,
                 Price = 10.59,
                 ProductProperties = new List<Product_Prop>()

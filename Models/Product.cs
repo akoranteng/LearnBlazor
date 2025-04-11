@@ -12,6 +12,11 @@ namespace LearnBlazor.Models
         [Required]
         public string Name { get; set; }
         [Range(1,1000)]
+
+        [Required]
+        public DateTime ShipDate { get; set; }
+
+
         public double Price { get; set; }
         public bool IsActive { get; set; }
         public IEnumerable<Product_Prop> ProductProperties { get; set; }
